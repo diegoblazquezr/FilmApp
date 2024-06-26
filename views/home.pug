@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/styles.css")
+        title Home
+    body
+        main
+            h1 Vista para buscar película
+            section
+                h3 Buscar por título
+                form(action='/film' method='POST')
+                    input#title(type='text' name='title' placeholder='Type a movie title')
+                    input(type='submit' value='Buscar')
