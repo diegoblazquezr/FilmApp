@@ -8,12 +8,12 @@ html(lang="en")
         title Films
     body
         main
-            h1 Vista para ver información de película
+            h1 Film App - Info 
             section
                 if film
                     h2= film.Title
-                    p= film.Plot
                     img(src=film.Poster, alt=film.Title)
+                    p= film.Plot
                 else
                     p#dataFilmApi
                     p#message #{error}

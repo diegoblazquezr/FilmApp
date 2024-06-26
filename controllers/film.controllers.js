@@ -2,7 +2,7 @@ require('dotenv').config();
 const FILMAPIKEY = process.env.FILMAPIKEY;
 
 const getFilm = async (req, res) => {
-    const { title } = req.body;
+    const title = req.params.title;
     try {
         const response = await fetch(`http://www.omdbapi.com/?apikey=${FILMAPIKEY}&t=${title}`);
         const data = await response.json();
@@ -17,19 +17,14 @@ const getFilm = async (req, res) => {
     }
 };
 
-// const getFilm = async (req, res) => {
-//     console.log("--"+req.query.title);
+const postFilm = async (req, res) => {
+    const { title } = req.body;
+    res.redirect(`/film/${title}`);
+};
 
-//     try {
-//         const title = req.query.title;
-//         const resFilmApi = await fetch(`https://www.omdbapi.com/?apikey=${FILMAPIKEY}&s=${title}`);
-//         const dataFilmApi = await resFilmApi.json();
-//         res.render("film.pug", { dataFilmApi, msj: "tus superproductos" });
-//     } catch (error) {
-//         return console.log("--error: "+error);
-//     }
-// }
+
 
 module.exports = {
-    getFilm
+    getFilm,
+    postFilm
 }

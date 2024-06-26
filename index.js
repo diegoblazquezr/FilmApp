@@ -22,7 +22,7 @@ app.use(express.static('public')); // Serve static files
 
 // API Routes
 app.use('/', homeRoutes);
-app.use('/film', filmRoutes);
+app.use('/', filmRoutes);
 
 app.listen(port, () => {
     console.log(`Example app listening on http://localhost:${port}`);

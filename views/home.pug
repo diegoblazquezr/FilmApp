@@ -8,9 +8,9 @@ html(lang="en")
         title Home
     body
         main
-            h1 Vista para buscar película
+            h1 Film App - Home
             section
-                h3 Buscar por título
-                form(action='/film' method='POST')
+                h3 Buscar película por título
+                form(action='/film/:title' method='post')
                     input#title(type='text' name='title' placeholder='Type a movie title')
                     input(type='submit' value='Buscar')
